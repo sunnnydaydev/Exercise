@@ -5,6 +5,6 @@ package datastructure.array_exercise;
  */
 public class ArrayTestMain {
     public static void main(String[] args) {
-        
+
     }
 }
