@@ -14,7 +14,6 @@ public class CommonIntList {
     public CommonIntList(int capacity) {
         arr = new int[capacity];
     }
-
     public CommonIntList() {
         this(10);
     }
