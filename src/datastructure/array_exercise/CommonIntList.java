@@ -148,13 +148,11 @@ public class CommonIntList {
      * 删除 指定索引位置的元素
      */
     public int removeElement(int index) throws IllegalAccessException {
-        if (index < 0 || index >=size) {
+        if (index < 0 || index >= size) {
             throw new IllegalAccessException("index is out of bound");
         }
         int tempElement = arr[index];
-        for (int i = index + 1; i < size; i++) {
-            arr[i - 1] = arr[i];
-        }
+        if (size - index + 1 >= 0) System.arraycopy(arr, index + 1, arr, index + 1 - 1, size - index + 1);
         size--;
         return tempElement;
     }

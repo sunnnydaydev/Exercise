@@ -1,5 +1,6 @@
 package datastructure.array_exercise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -24,7 +25,7 @@ public class ArrayTestMain {
             commonIntListPlus.removeElement(6);
             System.out.println("删除后：" + commonIntListPlus.toString());
 
-
+           new ArrayList<>();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
