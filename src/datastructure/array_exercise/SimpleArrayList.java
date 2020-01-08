@@ -1,4 +1,5 @@
 package datastructure.array_exercise;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -88,6 +89,31 @@ public class SimpleArrayList<E> implements Serializable {
     }
 
     /**
+     * 指定位置添加元素
+     */
+    public void add(int index, E e) {
+        if (index > size || index < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        ensureCapacityInternal(size + 1);
+        // 吧老数组 拷贝到扩容好的新数组中，由于grow方法扩容后吧数组对象又赋值给了data，所以这里只需把 data的 index 位置开始往后的元素，复制到data，的index+1位置开始
+        // 复制的长度为 size - index
+        System.arraycopy(data, index, data, index + 1, size - index);
+        data[index] = e;
+        size++;
+    }
+
+    /**
+     * @deprecated
+     */
+    public void remove() {
+        // todo 动态数组的核心扩容，已经搞完。而且也添加了 add方法实战。
+        //  删除几乎和添加类似。还有查找就更简单啦。 在CommonIntList中已经实现过
+        // 这里就不在写啦！
+    }
+
+
+    /**
      * 确保内部的初始容量
      *
      * @param minCapacity 最小容量
@@ -119,13 +145,15 @@ public class SimpleArrayList<E> implements Serializable {
         // 这里使用到了右移运算符，oldCapacity >> 1 代表  oldCapacity 除以 2的1次方（右移n 就代表除以2的n次方）
         int newCapacity = oldCapacity + (oldCapacity >> 1);// 新的容量为 oldCapacity+oldCapacity/2
 
-        // 扩容值 newCapacity 小于minCapacity
+        // 感觉 普通情况下 这个不会走（集合大小+集合大小一半 肯定大于集合大小+1）
         if (newCapacity - minCapacity < 0) {
             newCapacity = minCapacity;
         }
+        // 感觉这个一般情况下也不会触发
         if (newCapacity - MAX_ARRAY_SIZE > 0) {
             newCapacity = hugeCapacity(minCapacity);
         }
+        // 扩容
         data = Arrays.copyOf(data, newCapacity); // 吧数组拷贝到更大的数组中（底层是System.arraycopy方法 为native方法）
     }
 
@@ -135,4 +163,6 @@ public class SimpleArrayList<E> implements Serializable {
         }
         return (minCapacity > MAX_ARRAY_SIZE) ? Integer.MAX_VALUE : MAX_ARRAY_SIZE;
     }
+
+
 }

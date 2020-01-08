@@ -1,8 +1,5 @@
 package datastructure.array_exercise;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Created by sunnyDay on 2019/12/23 19:37
  */
@@ -25,7 +22,6 @@ public class ArrayTestMain {
             commonIntListPlus.removeElement(6);
             System.out.println("删除后：" + commonIntListPlus.toString());
 
-           new ArrayList<>();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
