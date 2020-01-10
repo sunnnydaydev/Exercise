@@ -1,5 +1,6 @@
 package algorithm.arrays_exercise;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -24,16 +25,10 @@ import java.util.Stack;
  */
 public class ReverseInteger {
     public static int reverse(int x) {
-        String s = Integer.toString(x);
-        return 0;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("（2的31次方）1左移31：" + (1 << 31));
-        System.out.println("整形最大值：" + Integer.MAX_VALUE); // 整形最大值:2147483647  2的31次方
-        System.out.println("整形最小值：" + Integer.MIN_VALUE); // 整形最小值 -2^31+1
-
-        String string = Integer.toString(3215);
+        if (x < Integer.MIN_VALUE || x > Integer.MAX_VALUE) {
+            return 0;
+        }
+        String string = Integer.toString(x);
         char[] chars = new char[string.length()];
 
         Stack<Character> characterStack = new Stack<>();
@@ -42,8 +37,21 @@ public class ReverseInteger {
             characterStack.push(string.charAt(i));
         }
         for (int i = 0; i < string.length(); i++) {
-            chars[i] = characterStack.pop();
+            if (characterStack.peek() != 0) {
+                chars[i] = characterStack.pop();
+            } else {
+                characterStack.pop();
+            }
         }
 
+      
+
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("（2的31次方）1左移31：" + (1 << 31));
+        System.out.println("整形最大值：" + Integer.MAX_VALUE); // 整形最大值:2147483647  2的31次方
+        System.out.println("整形最小值：" + Integer.MIN_VALUE); // 整形最小值 -2^31+1
     }
 }
