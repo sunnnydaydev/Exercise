@@ -31,6 +31,24 @@ public class MyLinkedList<E> {
     }
 
     /**
+     * 重写toString，遍历输出集合数据.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        while (head != null) {
+            sb.append(head.e);
+            if (head.next != null) {
+                sb.append(",");
+            }
+            head = head.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    /**
      * 添加元素到链表的首部
      *
      * @param e 要添加的元素
@@ -45,17 +63,18 @@ public class MyLinkedList<E> {
 
     /**
      * 添加元素到尾部
-     * @param e 要添加的元素
      *
-     * */
+     * @param e 要添加的元素
+     */
     public void addLast(E e) {
-        if (size == 0) {
-            addFirst(e);
+        // 思路：循环遍历链表，加到尾部即可
+        if (size == 0) { // head ==null 也行
+            addFirst(e); // 代码复用
         } else {
-            while (head.next != null) {
+            while (head != null) {
                 head = head.next;
             }
-            head.next = new Node(e, null);
+            head = new Node(e, null);
         }
 
     }
@@ -69,4 +88,5 @@ public class MyLinkedList<E> {
     public void add(int index, E e) {
 
     }
+
 }
