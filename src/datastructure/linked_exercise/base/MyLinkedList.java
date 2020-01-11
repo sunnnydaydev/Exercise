@@ -37,12 +37,13 @@ public class MyLinkedList<E> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        while (head != null) {
-            sb.append(head.e);
-            if (head.next != null) {
+        Node node = head;
+        while (node != null) {
+            sb.append(node.e);
+            if (node.next != null) {
                 sb.append(",");
             }
-            head = head.next;
+            node = node.next;
         }
         sb.append("]");
         return sb.toString();
@@ -71,12 +72,13 @@ public class MyLinkedList<E> {
         if (size == 0) { // head ==null 也行
             addFirst(e); // 代码复用
         } else {
-            while (head != null) {
-                head = head.next;
+            Node node = head;
+            while (node.next != null) {
+                node = node.next;
             }
-            head = new Node(e, null);
+            node.next = new Node(e, null);
+            size++;
         }
-
     }
 
     /**
@@ -86,7 +88,26 @@ public class MyLinkedList<E> {
      * @param e     要添加的元素
      */
     public void add(int index, E e) {
+        if (index < 0 || index > size) { // 数值可以为size的，因为为size使相当于插入末尾
+            throw new IndexOutOfBoundsException("index outOf bounds ");
+        }
+        if (size == 0) {//空集合时特殊处理
+            addFirst(e);
+        } else {
+            Node preNode = head; // head 节点的副本
+            for (int i = 0; i < index - 1; i++) { // 从头遍历到要插入节点的上一节点
+                preNode = preNode.next;
+            }
 
+            /** 完整写法：
+             *  Node node = new Node();
+                node.e = e;
+                node.next = preNode.next;
+                preNode.next = node;
+             */
+            preNode.next = new Node(e, preNode.next); // 优化写法
+            size++;
+        }
     }
 
 }
