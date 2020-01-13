@@ -10,4 +10,4 @@
 
 [1、两数和](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/arrays_exercise/TwoSum.java)
 
-[1、奇数偶数]()
+[1、奇数偶数](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/arrays_exercise/OddEven.java)
