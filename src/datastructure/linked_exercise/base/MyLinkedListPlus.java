@@ -98,4 +98,45 @@ public class MyLinkedListPlus<E> {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * 删除指定索引元素
+     */
+    public E remove(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("index is out of bounds");
+        }
+        Node preNode = dummyHead;
+        for (int i = 0; i < index; i++) {
+            preNode = preNode.next;
+        }
+        Node deleteNode = preNode.next; // 1、创建要删除节点的副本 （记录要删除的节点）
+        preNode.next = deleteNode.next; // 2、修改指针，使要删除节点的上一节点的指针，指向要删除节点的下一位置。
+        deleteNode.next = null;         // 3、要删除的节点指针域置空
+        size--; // 调整集合大小
+        return deleteNode.e;
+    }
+
+
+    /**
+     * 删除任意元素
+     *
+     * @param e ps:设计有弊端，本方法只删除首次碰到的元素。也就是第一次出现的。
+     */
+    public void removeE(E e) {
+        Node prev = dummyHead;
+        while (prev.next != null) {
+            if (prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next;
+        }
+        //要删除的元素非空时
+        if (prev.next != null) {
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+        }
+    }
+
 }

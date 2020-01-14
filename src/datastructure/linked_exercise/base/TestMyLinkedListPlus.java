@@ -6,16 +6,16 @@ package datastructure.linked_exercise.base;
 public class TestMyLinkedListPlus {
     public static void main(String[] args) {
         MyLinkedListPlus<Integer> mList = new MyLinkedListPlus<>();
-        mList.addFirst(2);
+
         mList.addFirst(1);
         mList.addFirst(0);
 
-        mList.addLast(3);
-        mList.addLast(4);
 
         mList.add(0, 100);
-        mList.add(6, 100);
-        //mList.add(8,200); // error  index is out of bounds
+        mList.addLast(100);
+
+        mList.removeE(100);
         System.out.println(mList);
+
     }
 }
