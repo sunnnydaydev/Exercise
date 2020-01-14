@@ -1,4 +1,4 @@
-package datastructure.linked_exercise.base;
+package datastructure.linked_exercise.base.single;
 
 /**
  * Created by sunnyDay on 2020/1/10 19:31
