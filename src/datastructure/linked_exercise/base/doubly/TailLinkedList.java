@@ -52,8 +52,31 @@ public class TailLinkedList<E> {
     }
 
 
-    public void remove(int index) {
-
+    /**
+     * @param index 要删除的索引
+     */
+    public E remove(int index) {
+        Node node = null;
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("索引越界");
+        }
+        if (index == 0) {//删除头
+            node = head;
+            head = node.next;
+        }
+        if (index == size) {// 删除尾部
+            node = get(size - 1);// 先驱节点
+            Node deleteNode = node.next;
+            node.next = null;
+            last = node;
+        } else {// 删除中间
+            node = get(index - 1);
+            Node nextNode = node.next.next;
+            Node deleteNode = node.next;
+            node.next = nextNode;
+        }
+        size--;
+        return node.e;
     }
 
     /**
@@ -76,7 +99,7 @@ public class TailLinkedList<E> {
      */
     @Override
     public String toString() {
-        // todo
+        //  遍历输出链表即可
         return super.toString();
     }
 }
