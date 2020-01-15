@@ -18,12 +18,5 @@ public class Test1 {
         list.add(4, 4);
 
         System.out.println(list.toString());
-
-        List<String> mList = null;
-        mList = new ArrayList<>();
-        mList.add("asdf");
-        mList = null;
-
-
     }
 }
