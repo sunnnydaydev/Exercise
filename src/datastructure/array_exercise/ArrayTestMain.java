@@ -21,7 +21,7 @@ public class ArrayTestMain {
             System.out.println("修改后：" + commonIntListPlus.toString());
             commonIntListPlus.removeElement(6);
             System.out.println("删除后：" + commonIntListPlus.toString());
-
+            // 简单修改
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
