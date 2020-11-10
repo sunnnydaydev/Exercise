@@ -1,4 +1,4 @@
-package algorithm.arrays_exercise;
+package algorithm.exercise;
 
 /**
  * Created by sunnyDay on 2020/1/13 10:37
