@@ -6,8 +6,10 @@
 >2、src/datastructure：数据结构回顾练习
 
 
-### 算法练习汇总：
+# 刷题：
 
 [1、两数和](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/arrays_exercise/TwoSum.java)
 
 [1、奇数偶数](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/arrays_exercise/OddEven.java)
+
+# 算法 待续
