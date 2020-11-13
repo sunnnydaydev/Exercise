@@ -21,8 +21,15 @@ public class BinarySearch {
         System.out.println(binarySearchLoop(arr2, 10));
         System.out.println(binarySearchLoop(arr3, 10));
 
+        System.out.println("-------------");
         //递归
+        System.out.println(binarySearchRecursion(arr1, 5, 0, arr1.length - 1));
+        System.out.println(binarySearchRecursion(arr1, 0, 0, arr1.length - 1));
         System.out.println(binarySearchRecursion(arr1, 8, 0, arr1.length - 1));
+        System.out.println(binarySearchRecursion(arr1, 9, 0, arr1.length - 1));
+        System.out.println(binarySearchRecursion(arr1, 20, 0, arr1.length - 1));
+        System.out.println(binarySearchRecursion(arr2, 10, 0, arr1.length - 1));
+        System.out.println(binarySearchRecursion(arr3, 10, 0, arr1.length - 1));
     }
 
     /**
@@ -50,19 +57,21 @@ public class BinarySearch {
     }
 
     /**
-     * 2、递归方式：优点bug，留坑。
+     * 2、递归方式
      */
-    static boolean binarySearchRecursion(int[] array, int target, int startIndex, int endIndex) {
-        if (null == array || startIndex > endIndex || 0 == array.length) {//特殊值处理
+    public static boolean binarySearchRecursion(int[] array, int target, int startIndex, int endIndex) {
+        if (null == array || array.length == 0) {
             return false;
         }
-        int midIndex = startIndex + (endIndex - startIndex) / 2;// 可优化
-        if (array[midIndex] == target) {
-            return true;
-        } else if (array[midIndex] > target) {//大于目标值 左边区间查找
-            binarySearchRecursion(array, target, startIndex, midIndex - 1);
-        } else if (array[midIndex] < target) {//小于目标值 右边区间查找
-            binarySearchRecursion(array, target, midIndex + 1, endIndex);
+        int midIndex = startIndex + (endIndex - startIndex) / 2;
+        if (startIndex <= endIndex) { // 避免数组越界array[midIndex]。target不存在时可能数组越界
+            if (array[midIndex] == target) {
+                return true;
+            } else if (array[midIndex] > target) {
+                return binarySearchRecursion(array, target, startIndex, midIndex - 1);
+            } else if (array[midIndex] < target) {
+                return binarySearchRecursion(array, target, midIndex + 1, endIndex);
+            }
         }
 
         return false;
