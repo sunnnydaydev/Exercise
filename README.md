@@ -1,6 +1,14 @@
 
+# 算法&刷题
 
-### [刷题](https://github.com/sunnnydaydev/CodingInterviews)
+记录一些算法，平时刷题也会提交到这里~
 
+###### 刷题
 
-### [算法](https://github.com/sunnnydaydev/Exercise/blob/master/%E7%AE%97%E6%B3%95.md)
+- [剑指offer专题](https://github.com/sunnnydaydev/CodingInterviews)
+- 数组
+- 链表
+- 二叉树
+- 等等...
+
+### [算法](mds/算法.md)
