@@ -1,14 +1,19 @@
+# Exercise
 
-# 算法&刷题
+这里主要是记录一些算法总结、以及刷题练习之处。
 
-记录一些算法，平时刷题也会提交到这里~
+# 做了哪些题？
 
-###### 刷题
-
-- [剑指offer专题](https://github.com/sunnnydaydev/CodingInterviews)
+- [剑指offer专题练习总结](https://github.com/sunnnydaydev/CodingInterviews)
+- 字符串
 - 数组
 - 链表
 - 二叉树
-- 等等...
 
-### [算法](mds/算法.md)
+# 遇到了哪些算法？
+
+[1、奇数偶数判断](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/exercise/OddEven.java)
+
+[2、二分查找](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/exercise/BinarySearch.java)
+
+[3、平均数算法](https://github.com/sunnnydaydev/Exercise/blob/master/src/algorithm/exercise/MiddleNumber.java)
