@@ -3,11 +3,8 @@ package datastructure.strings;
 
 /**
  * Create by SunnyDay 2023/02/20 20:50:08
- * <p>
  * 罗马数字包含以下七种字符:I，V，X，L，C，D和M。
- * <p>
  * 字符          数值
- * <p>
  * I             1
  * V             5
  * X             10
@@ -15,13 +12,10 @@ package datastructure.strings;
  * C             100
  * D             500
  * M             1000
- * <p>
  * 规则：
- * <p>
  * I可以放在V(5) 和X(10) 的左边，来表示 4 和 9。
  * X可以放在L(50) 和C(100) 的左边，来表示 40 和90。
  * C可以放在D(500) 和M(1000) 的左边，来表示400 和900。
- * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode.cn/problems/roman-to-integer
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -80,31 +74,6 @@ public class RomanToInt {
         return num;
     }
 
-    private int getNumberBySpecialChar(String s) {
-        int num = 0;
-        switch (s) {
-            case "IV":
-                num = 4;
-                break;
-            case "IX":
-                num = 9;
-                break;
-            case "XL":
-                num = 40;
-                break;
-            case "XC":
-                num = 90;
-                break;
-            case "CD":
-                num = 400;
-                break;
-            case "CM":
-                num = 900;
-                break;
-        }
-        return num;
-    }
-
 
     public static void main(String[] args) {
         RomanToInt romanToInt = new RomanToInt();
@@ -118,5 +87,10 @@ public class RomanToInt {
         System.out.println("RomanToInt:" + result4);
         int result5 = romanToInt.romanToInt("MCMXCIV");
         System.out.println("RomanToInt:" + result5);
+    }
+
+    public int secondPractice(String s){
+
+        return 0;
     }
 }

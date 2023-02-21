@@ -4,11 +4,15 @@
 
 # 做了哪些题？
 
-- [剑指offer专题练习总结](https://github.com/sunnnydaydev/CodingInterviews)
-- 字符串
-- 数组
-- 链表
-- 二叉树
+[剑指offer专题练习总结](https://github.com/sunnnydaydev/CodingInterviews)
+
+[字符串](./mds/字符串.md)
+
+数组
+
+链表
+
+二叉树
 
 # 遇到了哪些算法？
 
