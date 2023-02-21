@@ -27,13 +27,18 @@ package datastructure.strings;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  **/
 public class RomanToInt {
+    /**
+     * 官方思路：
+     * 1、当前的字符比后面的字符小时，把当前的字符代表的值符号变为负即可。
+     * 2、所有字符采用累加思路求和即可。
+     */
     public int romanToInt(String s) {
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
             int currentValue = getNumberByNormalChar(s.charAt(i));
             if (i < s.length() - 1 && currentValue < getNumberByNormalChar(s.charAt(i + 1))) {
                 sum -= currentValue;
-            } else {
+            } else {//最后一个字符单独计算即可。因为循环只能循环到i < s.length() - 1，这样能够保证 i+1不会数组越界
                 sum += currentValue;
             }
         }
