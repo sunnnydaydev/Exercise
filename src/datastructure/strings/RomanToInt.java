@@ -28,7 +28,7 @@ package datastructure.strings;
  **/
 public class RomanToInt {
     /**
-     * 官方思路：
+     * 未做出来直接看答案吧~ 官方思路：
      * 1、当前的字符比后面的字符小时，把当前的字符代表的值符号变为负即可。
      * 2、所有字符采用累加思路求和即可。
      */
@@ -38,7 +38,11 @@ public class RomanToInt {
             int currentValue = getNumberByNormalChar(s.charAt(i));
             if (i < s.length() - 1 && currentValue < getNumberByNormalChar(s.charAt(i + 1))) {
                 sum -= currentValue;
-            } else {//最后一个字符单独计算即可。因为循环只能循环到i < s.length() - 1，这样能够保证 i+1不会数组越界
+            } else {
+                /**
+                 *1、最后一个字符单独计算即可。 因为循环只能循环到i < s.length() - 1，这样能够保证 i+1不会数组越界。
+                 *2、currentValue>nextValue case 为正常情况直接累加即可。
+                 */
                 sum += currentValue;
             }
         }
