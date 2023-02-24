@@ -1,5 +1,4 @@
 package datastructure.strings;
 
-public class LongestClongommonPrefix {
-
+public class LongestCommonPrefix {
 }
